@@ -14,6 +14,16 @@ const useStyle = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     alignContent: 'center'
+  },
+  box1:{
+    marginTop: '5vh',
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifySelf: 'center',
+          alignSelf: 'center',
+          '& > :not(style)': {
+            m: 3,
+          }
   }
 });
 
@@ -30,16 +40,7 @@ export default function CardComponent() {
         </Button>
       </Box>
       <Box
-        sx={{
-          marginTop: '5vh',
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifySelf: 'center',
-          alignSelf: 'center',
-          '& > :not(style)': {
-            m: 3,
-          },
-        }}
+        className={styles.box1}
       >
 
         <TodoCard />
