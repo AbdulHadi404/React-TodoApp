@@ -1,17 +1,10 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
+import {Card,CardActions,CardContent,Typography,IconButton} from '@mui/material';
+import {Delete,Edit} from '@mui/icons-material';
 
 
 const TodoCard = () => {
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: 225 , margin: 2}}>
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                     Lizard
@@ -23,13 +16,10 @@ const TodoCard = () => {
             </CardContent>
             <CardActions>
                 <IconButton>
-                    <FavoriteIcon />
+                    <Edit />
                 </IconButton>
                 <IconButton>
-                    <EditIcon />
-                </IconButton>
-                <IconButton>
-                    <DeleteIcon />
+                    <Delete />
                 </IconButton>
             </CardActions>
         </Card>

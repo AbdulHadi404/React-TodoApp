@@ -1,10 +1,10 @@
 import './App.css';
-import TodoCard from './components/TodoCard';
+import InputCard from './components/InputCard';
 
 const App = () => {
   return (
     <div className="App">
-      <TodoCard />
+      <InputCard />
     </div>
   );
 }
