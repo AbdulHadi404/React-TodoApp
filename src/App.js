@@ -1,10 +1,10 @@
 import './App.css';
-import InputCard from './components/InputCard';
+import CardComponent from './components/CardComponent';
 
 const App = () => {
   return (
     <div className="App">
-      <InputCard />
+      <CardComponent />
     </div>
   );
 }
