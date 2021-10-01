@@ -1,3 +1,3 @@
-# React TodoApp with GraphQL
+# React TodoApp with GraphQL and MongoDB
 
 --In Progress
