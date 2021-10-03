@@ -60,16 +60,14 @@ export default function CardComponent() {
     }
 
     const handleAddTodo = () => {
-        if (title === "" || content === "") {
-            setAlert("No Fields should be empty!");
-            return;
-        }
-        createTodo({
-            variables: {
-                createTodoTodoInput: { title: title, content: content }
-            }
-        });
         setAlert(false);
+        title === "" || content === ""
+            ? setAlert("No Fields should be empty!")
+            : createTodo({
+                  variables: {
+                      createTodoTodoInput: { title: title, content: content }
+                  }
+              });
     };
 
     return (
