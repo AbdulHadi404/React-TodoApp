@@ -1,6 +1,6 @@
 # React TodoApp with GraphQL and MongoDB
 
-This TodoApp Implements CRUD operations using GraphQL Query and Mutations.
+This TodoApp Implements CRUD operations using Apollo GraphQL Query and Mutations.
 
 Here's the GraphQL Server for this App:
 - [React TodoApp Server](https://github.com/AbdulHadi404/React-TodoApp-Server)
