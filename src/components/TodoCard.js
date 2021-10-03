@@ -1,29 +1,42 @@
-import {Card,CardActions,CardContent,Typography,IconButton} from '@mui/material';
-import {Delete,Edit} from '@mui/icons-material';
+import {
+    Card,
+    CardActions,
+    CardContent,
+    Typography,
+    IconButton
+} from "@mui/material";
+import { Delete, Edit } from "@mui/icons-material";
+import { useMutation } from "@apollo/client";
+import { DELETE_TODO, GET_TODO } from "../graphql/todos";
 
+const TodoCard = ({ title, content, id }) => {
+    const [deleteTodo] = useMutation(DELETE_TODO, {
+        refetchQueries: [GET_TODO, "GetTodos"]
+    });
+    const handleDeleteTodo = () => {
+        deleteTodo({ variables: { deleteTodoId: id } });
+    };
 
-const TodoCard = () => {
     return (
-        <Card sx={{ maxWidth: 225 , margin: 2}}>
+        <Card sx={{ maxWidth: 225, margin: 2 }}>
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                    Lizard
+                    {title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000
-                    species, ranging across all continents except Antarctica
+                    {content}
                 </Typography>
             </CardContent>
             <CardActions>
                 <IconButton>
                     <Edit />
                 </IconButton>
-                <IconButton>
+                <IconButton onClick={handleDeleteTodo}>
                     <Delete />
                 </IconButton>
             </CardActions>
         </Card>
     );
-}
+};
 
-export default TodoCard
+export default TodoCard;
